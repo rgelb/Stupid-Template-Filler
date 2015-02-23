@@ -137,5 +137,13 @@ namespace TemplateFiller
         {
             SaveConnections();
         }
+
+        private void btnConnectionBuilder_Click(object sender, EventArgs e)
+        {
+            var dlg = new SQLServerConnectionDialog {ConnectionString = cboConnections.Text};
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+                cboConnections.Text = dlg.ConnectionString;
+        }
     }
 }
