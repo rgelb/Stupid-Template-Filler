@@ -58,7 +58,7 @@
             this.cboConnections.FormattingEnabled = true;
             this.cboConnections.Location = new System.Drawing.Point(19, 28);
             this.cboConnections.Name = "cboConnections";
-            this.cboConnections.Size = new System.Drawing.Size(732, 21);
+            this.cboConnections.Size = new System.Drawing.Size(873, 21);
             this.cboConnections.TabIndex = 2;
             this.cboConnections.Text = "data source=lani-vprcsh;initial catalog=ICMCentral;user id=svc_fusion;password=sv" +
     "c_fusion";
@@ -72,9 +72,10 @@
             this.txtQuery.Multiline = true;
             this.txtQuery.Name = "txtQuery";
             this.txtQuery.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtQuery.Size = new System.Drawing.Size(768, 104);
+            this.txtQuery.Size = new System.Drawing.Size(909, 104);
             this.txtQuery.TabIndex = 3;
             this.txtQuery.Text = "SELECT name, Value, Description FROM dbo.Config";
+            this.txtQuery.DoubleClick += new System.EventHandler(this.txtQuery_DoubleClick);
             // 
             // label2
             // 
@@ -103,11 +104,12 @@
             this.txtTemplate.Multiline = true;
             this.txtTemplate.Name = "txtTemplate";
             this.txtTemplate.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtTemplate.Size = new System.Drawing.Size(765, 104);
+            this.txtTemplate.Size = new System.Drawing.Size(906, 104);
             this.txtTemplate.TabIndex = 5;
             this.txtTemplate.Text = "IF NOT EXISTS ( SELECT 1 FROM dbo.Config WHERE Name = \'{0}\') \r\nBEGIN\r\n    INSERT " +
     " dbo.Config (Name, Value, Description)\r\n    VALUES  (N\'{0}\', N\'{1}\', N\'{2}\')\r\nEN" +
     "D\r\n\r\n";
+            this.txtTemplate.DoubleClick += new System.EventHandler(this.txtTemplate_DoubleClick);
             // 
             // label4
             // 
@@ -128,14 +130,14 @@
             this.txtResults.Multiline = true;
             this.txtResults.Name = "txtResults";
             this.txtResults.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtResults.Size = new System.Drawing.Size(765, 231);
+            this.txtResults.Size = new System.Drawing.Size(906, 314);
             this.txtResults.TabIndex = 7;
             this.txtResults.DoubleClick += new System.EventHandler(this.txtResults_DoubleClick);
             // 
             // btnGo
             // 
             this.btnGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGo.Location = new System.Drawing.Point(709, 579);
+            this.btnGo.Location = new System.Drawing.Point(850, 662);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(75, 23);
             this.btnGo.TabIndex = 9;
@@ -145,7 +147,8 @@
             // 
             // btnCopyAll
             // 
-            this.btnCopyAll.Location = new System.Drawing.Point(19, 579);
+            this.btnCopyAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCopyAll.Location = new System.Drawing.Point(19, 662);
             this.btnCopyAll.Name = "btnCopyAll";
             this.btnCopyAll.Size = new System.Drawing.Size(75, 23);
             this.btnCopyAll.TabIndex = 10;
@@ -156,7 +159,7 @@
             // btnConnectionBuilder
             // 
             this.btnConnectionBuilder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConnectionBuilder.Location = new System.Drawing.Point(757, 28);
+            this.btnConnectionBuilder.Location = new System.Drawing.Point(898, 28);
             this.btnConnectionBuilder.Name = "btnConnectionBuilder";
             this.btnConnectionBuilder.Size = new System.Drawing.Size(27, 23);
             this.btnConnectionBuilder.TabIndex = 11;
@@ -168,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 614);
+            this.ClientSize = new System.Drawing.Size(942, 697);
             this.Controls.Add(this.btnConnectionBuilder);
             this.Controls.Add(this.btnCopyAll);
             this.Controls.Add(this.btnGo);

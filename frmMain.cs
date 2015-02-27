@@ -145,5 +145,15 @@ namespace TemplateFiller
             if (dlg.ShowDialog() == DialogResult.OK)
                 cboConnections.Text = dlg.ConnectionString;
         }
+
+        private void txtTemplate_DoubleClick(object sender, EventArgs e)
+        {
+            txtTemplate.Clear();
+        }
+
+        private void txtQuery_DoubleClick(object sender, EventArgs e)
+        {
+            txtQuery.Clear();
+        }
     }
 }
