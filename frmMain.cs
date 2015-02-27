@@ -155,5 +155,17 @@ namespace TemplateFiller
         {
             txtQuery.Clear();
         }
+
+        private void HandleSelectAll_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && (e.KeyCode == Keys.A))
+            {
+                if (sender != null)
+                    ((TextBox)sender).SelectAll();
+
+                e.SuppressKeyPress = true;  // disable the Ding sound Windows makes
+                e.Handled = true;
+            }
+        }
     }
 }

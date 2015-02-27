@@ -76,6 +76,7 @@
             this.txtQuery.TabIndex = 3;
             this.txtQuery.Text = "SELECT name, Value, Description FROM dbo.Config";
             this.txtQuery.DoubleClick += new System.EventHandler(this.txtQuery_DoubleClick);
+            this.txtQuery.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HandleSelectAll_KeyDown);
             // 
             // label2
             // 
@@ -110,6 +111,7 @@
     " dbo.Config (Name, Value, Description)\r\n    VALUES  (N\'{0}\', N\'{1}\', N\'{2}\')\r\nEN" +
     "D\r\n\r\n";
             this.txtTemplate.DoubleClick += new System.EventHandler(this.txtTemplate_DoubleClick);
+            this.txtTemplate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HandleSelectAll_KeyDown);
             // 
             // label4
             // 
@@ -133,6 +135,7 @@
             this.txtResults.Size = new System.Drawing.Size(906, 314);
             this.txtResults.TabIndex = 7;
             this.txtResults.DoubleClick += new System.EventHandler(this.txtResults_DoubleClick);
+            this.txtResults.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HandleSelectAll_KeyDown);
             // 
             // btnGo
             // 
