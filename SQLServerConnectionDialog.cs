@@ -188,5 +188,10 @@ namespace TemplateFiller
         {
             InitializeComponent();
         }
+
+        private void cbServer_TextChanged(object sender, EventArgs e)
+        {
+            cbDataBase.Text = "";
+        }
     }
 }

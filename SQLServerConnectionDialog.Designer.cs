@@ -61,6 +61,7 @@ namespace TemplateFiller
             this.cbServer.Size = new System.Drawing.Size(232, 21);
             this.cbServer.TabIndex = 1;
             this.cbServer.DropDown += new System.EventHandler(this.cbServer_DropDown);
+            this.cbServer.TextChanged += new System.EventHandler(this.cbServer_TextChanged);
             // 
             // btnRefresh
             // 
