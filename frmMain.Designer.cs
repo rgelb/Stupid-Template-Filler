@@ -40,6 +40,9 @@
             this.btnGo = new System.Windows.Forms.Button();
             this.btnCopyAll = new System.Windows.Forms.Button();
             this.btnConnectionBuilder = new System.Windows.Forms.Button();
+            this.llblTemplateClear = new System.Windows.Forms.LinkLabel();
+            this.llblResultsClear = new System.Windows.Forms.LinkLabel();
+            this.llblQueryClear = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +78,6 @@
             this.txtQuery.Size = new System.Drawing.Size(909, 104);
             this.txtQuery.TabIndex = 3;
             this.txtQuery.Text = "SELECT name, Value, Description FROM dbo.Config";
-            this.txtQuery.DoubleClick += new System.EventHandler(this.txtQuery_DoubleClick);
             this.txtQuery.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HandleSelectAll_KeyDown);
             // 
             // label2
@@ -110,7 +112,6 @@
             this.txtTemplate.Text = "IF NOT EXISTS ( SELECT 1 FROM dbo.Config WHERE Name = \'{0}\') \r\nBEGIN\r\n    INSERT " +
     " dbo.Config (Name, Value, Description)\r\n    VALUES  (N\'{0}\', N\'{1}\', N\'{2}\')\r\nEN" +
     "D\r\n\r\n";
-            this.txtTemplate.DoubleClick += new System.EventHandler(this.txtTemplate_DoubleClick);
             this.txtTemplate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HandleSelectAll_KeyDown);
             // 
             // label4
@@ -134,7 +135,6 @@
             this.txtResults.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtResults.Size = new System.Drawing.Size(906, 314);
             this.txtResults.TabIndex = 7;
-            this.txtResults.DoubleClick += new System.EventHandler(this.txtResults_DoubleClick);
             this.txtResults.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HandleSelectAll_KeyDown);
             // 
             // btnGo
@@ -170,11 +170,47 @@
             this.btnConnectionBuilder.UseVisualStyleBackColor = true;
             this.btnConnectionBuilder.Click += new System.EventHandler(this.btnConnectionBuilder_Click);
             // 
+            // llblTemplateClear
+            // 
+            this.llblTemplateClear.AutoSize = true;
+            this.llblTemplateClear.Location = new System.Drawing.Point(71, 185);
+            this.llblTemplateClear.Name = "llblTemplateClear";
+            this.llblTemplateClear.Size = new System.Drawing.Size(31, 13);
+            this.llblTemplateClear.TabIndex = 12;
+            this.llblTemplateClear.TabStop = true;
+            this.llblTemplateClear.Text = "Clear";
+            this.llblTemplateClear.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblTemplateClear_LinkClicked);
+            // 
+            // llblResultsClear
+            // 
+            this.llblResultsClear.AutoSize = true;
+            this.llblResultsClear.Location = new System.Drawing.Point(71, 326);
+            this.llblResultsClear.Name = "llblResultsClear";
+            this.llblResultsClear.Size = new System.Drawing.Size(31, 13);
+            this.llblResultsClear.TabIndex = 13;
+            this.llblResultsClear.TabStop = true;
+            this.llblResultsClear.Text = "Clear";
+            this.llblResultsClear.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblResultsClear_LinkClicked);
+            // 
+            // llblQueryClear
+            // 
+            this.llblQueryClear.AutoSize = true;
+            this.llblQueryClear.Location = new System.Drawing.Point(71, 54);
+            this.llblQueryClear.Name = "llblQueryClear";
+            this.llblQueryClear.Size = new System.Drawing.Size(31, 13);
+            this.llblQueryClear.TabIndex = 14;
+            this.llblQueryClear.TabStop = true;
+            this.llblQueryClear.Text = "Clear";
+            this.llblQueryClear.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblQueryClear_LinkClicked);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 697);
+            this.Controls.Add(this.llblQueryClear);
+            this.Controls.Add(this.llblResultsClear);
+            this.Controls.Add(this.llblTemplateClear);
             this.Controls.Add(this.btnConnectionBuilder);
             this.Controls.Add(this.btnCopyAll);
             this.Controls.Add(this.btnGo);
@@ -210,6 +246,9 @@
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Button btnCopyAll;
         private System.Windows.Forms.Button btnConnectionBuilder;
+        private System.Windows.Forms.LinkLabel llblTemplateClear;
+        private System.Windows.Forms.LinkLabel llblResultsClear;
+        private System.Windows.Forms.LinkLabel llblQueryClear;
     }
 }
 

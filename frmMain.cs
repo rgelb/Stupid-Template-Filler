@@ -85,11 +85,6 @@ namespace TemplateFiller
             Clipboard.SetText(txtResults.Text);
         }
 
-        private void txtResults_DoubleClick(object sender, EventArgs e)
-        {
-            txtResults.Text = "";
-        }
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadConnections();
@@ -146,26 +141,27 @@ namespace TemplateFiller
                 cboConnections.Text = dlg.ConnectionString;
         }
 
-        private void txtTemplate_DoubleClick(object sender, EventArgs e)
-        {
-            txtTemplate.Clear();
-        }
-
-        private void txtQuery_DoubleClick(object sender, EventArgs e)
-        {
-            txtQuery.Clear();
-        }
-
         private void HandleSelectAll_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && (e.KeyCode == Keys.A))
             {
-                if (sender != null)
-                    ((TextBox)sender).SelectAll();
+                ((TextBox) sender)?.SelectAll();
 
                 e.SuppressKeyPress = true;  // disable the Ding sound Windows makes
                 e.Handled = true;
             }
+        }
+
+        private void llblTemplateClear_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            txtTemplate.Clear();
+        }
+
+        private void llblResultsClear_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            txtResults.Clear();
+        }
+
+        private void llblQueryClear_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            txtQuery.Clear();
         }
     }
 }
